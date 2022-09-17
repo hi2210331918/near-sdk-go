@@ -1,0 +1,11 @@
+near
+
+官网 https://near.org/
+浏览器 https://explorer.near.org/
+文档 https://docs.near.org/api/rpc/introduction
+
+钱包
+测试 https://wallet.testnet.near.org/
+主网 https://wallet.mainnet.near.org/
+
+postmanApi:https://documenter.getpostman.com/view/2821468/2s7YfVZVqi#34ffec9b-1f58-4799-b035-f2bfd081020e
