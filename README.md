@@ -1,14 +1,14 @@
 # near-sdk-go
 
-官网 https://near.org/
-浏览器 https://explorer.near.org/
-文档 https://docs.near.org/api/rpc/introduction
+    官网 https://near.org/
+    浏览器 https://explorer.near.org/
+    文档 https://docs.near.org/api/rpc/introduction
 
-钱包
-测试 https://wallet.testnet.near.org/
-主网 https://wallet.mainnet.near.org/
+    钱包
+    测试 https://wallet.testnet.near.org/
+    主网 https://wallet.mainnet.near.org/
 
-postmanApi:https://documenter.getpostman.com/view/2821468/2s7YfVZVqi#34ffec9b-1f58-4799-b035-f2bfd081020e
+    postmanApi:https://documenter.getpostman.com/view/2821468/2s7YfVZVqi#34ffec9b-1f58-4799-b035-f2bfd081020e
 
 ## create address
     priv,pub, err := account.GenerateKey()
@@ -130,16 +130,9 @@ postmanApi:https://documenter.getpostman.com/view/2821468/2s7YfVZVqi#34ffec9b-1f
 	}
 	b64Data := base64.StdEncoding.EncodeToString(stxData)
 
-	txid1, err := c.BroadcastTxAsync(b64Data)
+	txid, err := c.BroadcastTxCommit(b64Data)
 	if err != nil {
-		log.Println("Async 广播交易失败：", err.Error())
+		log.Println("广播交易失败：", err.Error())
 		return
 	}
-	fmt.Println("Async Txid: ", txid1)
-
-	txid2, err := c.BroadcastTxCommit(b64Data)
-	if err != nil {
-		log.Println("Commit 广播交易失败：", err.Error())
-		return
-	}
-	fmt.Println("Commit Txid: ", txid2)
+	fmt.Println("Txid: ", txid)
